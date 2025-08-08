@@ -1,4 +1,4 @@
 ---
-title: My Frps Server
+title: My  Server
 sdk: docker
 ---
