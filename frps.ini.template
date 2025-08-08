@@ -1,0 +1,20 @@
+[common]
+# 绑定 HF 暴露的唯一端口 7860
+bind_port = 7860
+
+# 将 HTTP 服务也绑定到此端口，以支持子域名模式
+vhost_http_port = 7860
+
+# 启用 TCP 端口复用，让非 HTTP 服务也能通过 7860 端口
+tcpmux_httpconnect_port = 7860
+
+# 从环境变量动态获取子域名主机
+subdomain_host = ${SUBDOMAIN_HOST}
+
+# Dashboard 配置 (内部端口，我们将通过 frpc 访问)
+dashboard_port = 7501
+dashboard_user = admin
+dashboard_pwd = ${FRP_DASHBOARD_PWD}
+
+# 从环境变量获取认证 Token
+token = ${FRP_TOKEN}
